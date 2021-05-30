@@ -1,7 +1,7 @@
 // Example 1
  
 let age = '19'
-const ternarCondition = age <= 90 ? 'Ваш возраст соответствует' : 'Ваш возраст не соответствует'
+const ternarCondition = age >= 18 && age <= 90 ? 'Ваш возраст соответствует' : 'Ваш возраст не соответствует'
 console.log(ternarCondition);
 
 
@@ -32,7 +32,7 @@ if (num < 60) {
 //Example 4
 let language = 'spanish';
 switch (language) {
-    case 'chinese or mandarin' :
+    case 'chinese' || 'mandarin' :
         console.log('MOST number of native speakers!');
         break;
     case 'spanish' :
