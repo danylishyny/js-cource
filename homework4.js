@@ -12,24 +12,54 @@ const numbers = [1, -1, 2, 3];
 
 //Example 2 Коли ви запускаєте функцію arrayFromRange, ...
 
-const numbers = arrayFromRange(1, 4); 
+
 function arrayFromRange(min, max) {
-    for (let i = 0; i < arrayFromRange.length; ++i) {
-        //if (arrayFromRange[i] > max) max = arrayFromRange[i];
-        //if (arrayFromRange[i] < min) min = arrayFromRange[i];
+    let length = max-min;
+    let arr = new Array();
+    for (let i = 0; i < arrayFromRange.length; i++) {
+        let a =min++
+        arr.push(max);
+        return arr;
         
     }
-    console.log()
+    const numbers = arrayFromRange(1, 4); 
+    console.log(numbers)
 }
 
 //Example 3 Потрібно створити функцію, яка повертатиме максимальне число з масиву
 
 const numbers = [1, 2, 3, 4, 5];
-const maxNumber = getMax(numbers);
+const maxNumb = getMax (numbers);
 
-function getMax([]) {
-    let max = Math.max.apply(null, numbers)
-    return max
+function getMax(Array) {
+    let maxNumb = 0;
+    for (let numb of Array){
+        if (numb > maxNumb){
+            maxNumb = numb;
+            }
+        }
+        return maxNumb
     }
-    
-    console.log(maxNumber)
+    console.log(maxNumb)
+
+// Example 4 На основі масиву movies потрібно повернути усі фільми, які були випущені в 2021 році з рейтингом більше 4
+
+let movies = [
+    {title: 'a', year: 2021, rating: 4.7},
+    {title: 'b', year: 2020, rating: 4.4},
+    {title: 'c', year: 2021, rating: 4.3},
+    {title: 'd', year: 2021, rating: 3.9},
+    ]
+
+    let movies2021 = movies.filter(function(movie) {
+        return movie.year == 2021 && movie.rating > 4.0
+    });
+   
+   movies2021.sort(function(a,b) {
+    return b.rating - a.rating;
+  });;
+   
+
+  //or
+   let movieTitle = movies2021.map(a => a.title);
+   console.log(movieTitle);
