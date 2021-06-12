@@ -10,30 +10,40 @@ const numbers = [1, -1, 2, 3];
      }
     console.log(sum(numbers));
 
+    //or 
+    let reduce = numbers.reduce((sum, current) => sum +current,0);
+    console.log(reduce);
+
 //Example 2 Коли ви запускаєте функцію arrayFromRange, ...
 
 
 function arrayFromRange(min, max) {
     let length = max-min;
     let arr = new Array();
-    for (let i = 0; i < arrayFromRange.length; i++) {
-        let a =min++
-        arr.push(max);
-        return arr;
+    for (let i = 0; i < length; i++) {
+        let a = min++;
+        arr.push(a);
         
     }
-    const numbers = arrayFromRange(1, 4); 
-    console.log(numbers)
+    arr.push(max);
+    return arr;
+    
 }
+
+const numbers = arrayFromRange(1, 4);
+console.log(numbers);
+
+const negativeNumbers = arrayFromRange(-10, -8)
+console.log(negativeNumbers);
 
 //Example 3 Потрібно створити функцію, яка повертатиме максимальне число з масиву
 
 const numbers = [1, 2, 3, 4, 5];
 const maxNumb = getMax (numbers);
 
-function getMax(Array) {
+function getMax(someArray) {
     let maxNumb = 0;
-    for (let numb of Array){
+    for (let numb of someArray){
         if (numb > maxNumb){
             maxNumb = numb;
             }
